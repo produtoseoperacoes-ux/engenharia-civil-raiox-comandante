@@ -84,116 +84,98 @@ const topSubjects = [
   },
   {
     rank: 5,
-    name: "Estruturas hiperestáticas",
-    category: "Análise estrutural", 
-    total: 8,
-    percentage: 2.5,
-    description: "Análise de estruturas estaticamente indeterminadas",
+    name: "Ferramentas para planejamento e controle",
+    category: "Planejamento e controle de obras",
+    total: 6,
+    percentage: 2.4,
+    description: "Ferramentas para o planejamento e controle de obras",
     priority: "ALTA",
     trend: "ESTÁVEL",
     distribution: {
-      petrobras: { count: 4, percentage: 50.0 },
-      transpetro: { count: 1, percentage: 12.5 },
-      cfrm: { count: 1, percentage: 12.5 },
-      eaoear: { count: 0, percentage: 0.0 },
-      cpcem: { count: 2, percentage: 25.0 }
+      petrobras: { count: 3, percentage: 50.0 },
+      transpetro: { count: 3, percentage: 50.0 }
     },
-    focus: ["Método das Forças", "Método dos Deslocamentos", "Hiperestáticos", "Indeterminação"],
-    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q)"
+    focus: ["PERT", "CPM", "Cronogramas", "Gantt"],
+    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (1q)"
   },
   {
     rank: 6,
-    name: "Fundações profundas",
-    category: "Fundações",
-    total: 8,
-    percentage: 2.5,
-    description: "Projeto e execução de fundações profundas",
-    priority: "ALTA",
-    trend: "CRESCENTE",
-    distribution: {
-      petrobras: { count: 2, percentage: 25.0 },
-      transpetro: { count: 0, percentage: 0.0 },
-      cfrm: { count: 0, percentage: 0.0 },
-      eaoear: { count: 0, percentage: 0.0 },
-      cpcem: { count: 3, percentage: 37.5 }
-    },
-    focus: ["Estacas", "Tubulões", "Capacidade de Carga", "Recalques"],
-    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q)"
-  },
-  {
-    rank: 7,
-    name: "Conceitos básicos",
-    category: "Mecânica dos solos",
-    total: 8,
-    percentage: 2.5,
-    description: "Conceitos fundamentais da mecânica dos solos",
+    name: "Dutovias",
+    category: "Transportes",
+    total: 6,
+    percentage: 2.4,
+    description: "Projeto e construção de dutovias",
     priority: "ALTA",
     trend: "ESTÁVEL",
     distribution: {
-      petrobras: { count: 3, percentage: 37.5 },
-      transpetro: { count: 1, percentage: 12.5 },
-      cfrm: { count: 0, percentage: 0.0 },
-      eaoear: { count: 1, percentage: 12.5 },
-      cpcem: { count: 1, percentage: 12.5 }
+      petrobras: { count: 3, percentage: 50.0 },
+      transpetro: { count: 3, percentage: 50.0 }
     },
-    focus: ["Origem dos Solos", "Propriedades", "Índices Físicos", "Classificação"],
-    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2012 (1q)"
+    focus: ["Tubulações", "Pressão", "Materiais", "Instalação"],
+    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (1q)"
+  },
+  {
+    rank: 7,
+    name: "Estabilidade de taludes",
+    category: "Obras de terra",
+    total: 6,
+    percentage: 2.4,
+    description: "Análise de estabilidade de taludes naturais e artificiais",
+    priority: "ALTA",
+    trend: "ESTÁVEL",
+    distribution: {
+      petrobras: { count: 3, percentage: 50.0 },
+      transpetro: { count: 3, percentage: 50.0 }
+    },
+    focus: ["Fator de Segurança", "Métodos de Análise", "Ruptura", "Contenção"],
+    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2012 (2q)"
   },
   {
     rank: 8,
     name: "Água nos solos",
     category: "Mecânica dos solos",
-    total: 8,
-    percentage: 2.5,
+    total: 5,
+    percentage: 2.0,
     description: "Permeabilidade e fluxo de água nos solos",
     priority: "ALTA",
     trend: "ESTÁVEL",
     distribution: {
-      petrobras: { count: 5, percentage: 62.5 },
-      transpetro: { count: 0, percentage: 0.0 },
-      cfrm: { count: 0, percentage: 0.0 },
-      eaoear: { count: 1, percentage: 12.5 },
-      cpcem: { count: 1, percentage: 12.5 }
+      petrobras: { count: 2, percentage: 40.0 },
+      transpetro: { count: 3, percentage: 60.0 }
     },
     focus: ["Permeabilidade", "Fluxo", "Pressão Neutra", "Rebaixamento"],
     historical: "2021 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (1q)"
   },
   {
     rank: 9,
-    name: "Estabilidade de taludes",
-    category: "Obras de terra",
-    total: 8,
-    percentage: 2.5,
-    description: "Análise de estabilidade de taludes naturais e artificiais",
+    name: "Conceitos básicos",
+    category: "Mecânica dos solos",
+    total: 5,
+    percentage: 2.0,
+    description: "Conceitos fundamentais da mecânica dos solos",
     priority: "ALTA",
     trend: "ESTÁVEL",
     distribution: {
-      petrobras: { count: 5, percentage: 62.5 },
-      transpetro: { count: 1, percentage: 12.5 },
-      cfrm: { count: 1, percentage: 12.5 },
-      eaoear: { count: 0, percentage: 0.0 },
-      cpcem: { count: 0, percentage: 0.0 }
+      petrobras: { count: 3, percentage: 60.0 },
+      transpetro: { count: 2, percentage: 40.0 }
     },
-    focus: ["Fator de Segurança", "Métodos de Análise", "Ruptura", "Contenção"],
-    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2012 (2q)"
+    focus: ["Origem dos Solos", "Propriedades", "Índices Físicos", "Classificação"],
+    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2012 (1q)"
   },
   {
     rank: 10,
-    name: "Esgoto",
-    category: "Saneamento básico",
-    total: 8,
-    percentage: 2.5,
-    description: "Sistemas de coleta e tratamento de esgoto sanitário",
+    name: "Cisalhamento",
+    category: "Resistência dos materiais",
+    total: 5,
+    percentage: 2.0,
+    description: "Análise de tensões e deformações por cisalhamento",
     priority: "ALTA",
-    trend: "CRESCENTE",
+    trend: "ESTÁVEL",
     distribution: {
-      petrobras: { count: 5, percentage: 62.5 },
-      transpetro: { count: 0, percentage: 0.0 },
-      cfrm: { count: 0, percentage: 0.0 },
-      eaoear: { count: 2, percentage: 25.0 },
-      cpcem: { count: 1, percentage: 12.5 }
+      petrobras: { count: 2, percentage: 40.0 },
+      transpetro: { count: 3, percentage: 60.0 }
     },
-    focus: ["Redes Coletoras", "Tratamento", "ETE", "Dimensionamento"],
+    focus: ["Tensão de Cisalhamento", "Fluxo de Cisalhamento", "Torção", "Centro de Cisalhamento"],
     historical: "2021 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (1q)"
   }
 ];
@@ -250,7 +232,7 @@ export const TopSubjects = () => {
           </h2>
         </div>
         <p className="text-muted-foreground">
-          As submatérias que mais aparecem nos concursos de Engenharia Civil (PETROBRAS, TRANSPETRO, CFRM, EAOEAR e CP-CEM)
+          As submatérias que mais aparecem nos concursos de Engenharia Civil (PETROBRAS, TRANSPETRO, CFrM, EAOEAR e CP-CEM)
         </p>
       </div>
 
