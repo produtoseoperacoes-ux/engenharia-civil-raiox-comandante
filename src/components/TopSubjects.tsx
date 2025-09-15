@@ -8,67 +8,79 @@ import { ChevronDown, ChevronUp, Trophy, TrendingUp, Target, Calendar, BookOpen 
 const topSubjects = [
   {
     rank: 1,
-    name: "Flexão",
-    category: "Resistência dos materiais",
-    total: 7,
-    percentage: 2.8,
-    description: "Análise de elementos submetidos à flexão",
+    name: "Estruturas isostáticas",
+    category: "Análise estrutural",
+    total: 15,
+    percentage: 4.7,
+    description: "Análise de estruturas isostáticas e cálculo de reações",
     priority: "MÁXIMA",
     trend: "CRESCENTE",
     distribution: {
-      petrobras: { count: 2, percentage: 28.6 },
-      transpetro: { count: 5, percentage: 71.4 }
-    },
-    focus: ["Momentos Fletores", "Tensões", "Deformações", "Vigas"],
-    historical: "2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (2q) • 2012 (2q)"
-  },
-  {
-    rank: 2,
-    name: "Estruturas isostáticas",
-    category: "Análise estrutural",
-    total: 7,
-    percentage: 2.8,
-    description: "Análise de estruturas isostáticas e cálculo de reações",
-    priority: "ALTA",
-    trend: "ESTÁVEL",
-    distribution: {
-      petrobras: { count: 3, percentage: 42.9 },
-      transpetro: { count: 4, percentage: 57.1 }
+      petrobras: { count: 3, percentage: 20.0 },
+      transpetro: { count: 4, percentage: 26.7 },
+      cfrm: { count: 2, percentage: 13.3 },
+      eaoear: { count: 3, percentage: 20.0 },
+      cpcem: { count: 3, percentage: 20.0 }
     },
     focus: ["Treliças", "Vigas", "Pórticos", "Reações"],
     historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (2q)"
   },
   {
+    rank: 2,
+    name: "Ferramentas para planejamento e controle",
+    category: "Planejamento e controle de obras",
+    total: 14,
+    percentage: 4.4,
+    description: "Ferramentas para o planejamento e controle de obras",
+    priority: "MÁXIMA",
+    trend: "CRESCENTE",
+    distribution: {
+      petrobras: { count: 6, percentage: 42.9 },
+      transpetro: { count: 2, percentage: 14.3 },
+      cfrm: { count: 3, percentage: 21.4 },
+      eaoear: { count: 3, percentage: 21.4 },
+      cpcem: { count: 0, percentage: 0.0 }
+    },
+    focus: ["PERT", "CPM", "Cronogramas", "Gantt"],
+    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (1q)"
+  },
+  {
     rank: 3,
-    name: "Conceitos fundamentais",
-    category: "Análise estrutural",
-    total: 6,
-    percentage: 2.4,
-    description: "Conceitos básicos de análise estrutural",
-    priority: "ALTA",
+    name: "Carga axial",
+    category: "Resistência dos materiais",
+    total: 13,
+    percentage: 4.0,
+    description: "Análise de elementos submetidos à tração e compressão",
+    priority: "MÁXIMA",
     trend: "ESTÁVEL",
     distribution: {
-      petrobras: { count: 3, percentage: 50.0 },
-      transpetro: { count: 3, percentage: 50.0 }
+      petrobras: { count: 3, percentage: 23.1 },
+      transpetro: { count: 1, percentage: 7.7 },
+      cfrm: { count: 0, percentage: 0.0 },
+      eaoear: { count: 7, percentage: 53.8 },
+      cpcem: { count: 1, percentage: 7.7 }
     },
-    focus: ["Cargas", "Apoios", "Vínculos", "Equilíbrio"],
+    focus: ["Tensão Normal", "Deformação", "Lei de Hooke", "Concentração de Tensões"],
     historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (1q)"
   },
   {
     rank: 4,
-    name: "Segurança, inspeção e manutenção de edificações",
-    category: "Segurança estrutural",
-    total: 6,
-    percentage: 2.4,
-    description: "Segurança estrutural, inspeção predial e manutenção preventiva",
-    priority: "ALTA",
+    name: "Flexão",
+    category: "Resistência dos materiais",
+    total: 13,
+    percentage: 4.0,
+    description: "Análise de elementos submetidos à flexão",
+    priority: "MÁXIMA",
     trend: "CRESCENTE",
     distribution: {
-      petrobras: { count: 3, percentage: 50.0 },
-      transpetro: { count: 3, percentage: 50.0 }
+      petrobras: { count: 3, percentage: 23.1 },
+      transpetro: { count: 4, percentage: 30.8 },
+      cfrm: { count: 1, percentage: 7.7 },
+      eaoear: { count: 0, percentage: 0.0 },
+      cpcem: { count: 2, percentage: 15.4 }
     },
-    focus: ["Inspeção", "Patologia", "Manutenção", "Vida Útil"],
-    historical: "2021 (1q) • 2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (1q) • 2012 (1q)"
+    focus: ["Momentos Fletores", "Tensões", "Deformações", "Vigas"],
+    historical: "2014 (1q) • 2012 (1q) • 2023 (1q) • 2018 (2q) • 2012 (2q)"
   },
   {
     rank: 5,
@@ -190,9 +202,9 @@ const getExamColor = (examId: string) => {
   switch (examId) {
     case 'petrobras': return 'bg-petrobras';
     case 'transpetro': return 'bg-transpetro';
-    case 'eaoear': return 'bg-military';
-    case 'cpcem': return 'bg-red-500';
     case 'cfrm': return 'bg-cyan-500';
+    case 'eaoear': return 'bg-blue-500';
+    case 'cpcem': return 'bg-red-500';
     default: return 'bg-muted';
   }
 };
@@ -220,7 +232,7 @@ export const TopSubjects = () => {
           </h2>
         </div>
         <p className="text-muted-foreground">
-          As submatérias que mais aparecem nas provas de PETROBRAS e TRANSPETRO
+          As submatérias que mais aparecem nos concursos de Engenharia Civil (PETROBRAS, TRANSPETRO, CFrM, EAOEAR e CP-CEM)
         </p>
       </div>
 

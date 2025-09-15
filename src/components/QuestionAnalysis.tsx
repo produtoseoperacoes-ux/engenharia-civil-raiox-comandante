@@ -8,67 +8,57 @@ import { Search, Trophy, Medal, Award, Filter, X, Building2, Factory, Plane, Shi
 
 // Dados das submatérias baseados no CSV atualizado fornecido pelo usuário
 const subjectRankingData = [
-  // Resistência dos materiais
-  { rank: 1, materia: "Resistência dos materiais", submateria: "Flexão", petrobras: 2, transpetro: 5, total: 7, percentage: 2.8 },
-  { rank: 2, materia: "Análise estrutural", submateria: "Conceitos fundamentais", petrobras: 3, transpetro: 3, total: 6, percentage: 2.4 },
-  { rank: 3, materia: "Análise estrutural", submateria: "Estruturas isostáticas", petrobras: 3, transpetro: 4, total: 7, percentage: 2.8 },
-  { rank: 4, materia: "Segurança, inspeção e manutenção de edificações", submateria: "Segurança, inspeção e manutenção de edificações", petrobras: 3, transpetro: 3, total: 6, percentage: 2.4 },
-  { rank: 5, materia: "Planejamento e controle de obras", submateria: "Ferramentas para o planejamento e controle de obras", petrobras: 3, transpetro: 3, total: 6, percentage: 2.4 },
-  { rank: 6, materia: "Transportes", submateria: "Dutovias", petrobras: 3, transpetro: 3, total: 6, percentage: 2.4 },
-  { rank: 7, materia: "Obras de terra", submateria: "Estabilidade de taludes", petrobras: 3, transpetro: 3, total: 6, percentage: 2.4 },
-  { rank: 8, materia: "Mecânica dos solos", submateria: "Água nos solos", petrobras: 2, transpetro: 3, total: 5, percentage: 2.0 },
-  { rank: 9, materia: "Mecânica dos solos", submateria: "Conceitos básicos", petrobras: 3, transpetro: 2, total: 5, percentage: 2.0 },
-  { rank: 10, materia: "Resistência dos materiais", submateria: "Cisalhamento", petrobras: 2, transpetro: 3, total: 5, percentage: 2.0 },
-  { rank: 11, materia: "Estruturas de concreto armado", submateria: "Conceito básicos", petrobras: 3, transpetro: 2, total: 5, percentage: 2.0 },
-  { rank: 12, materia: "Estruturas metálicas", submateria: "Conceitos básicos e noções de dimensionamento", petrobras: 3, transpetro: 2, total: 5, percentage: 2.0 },
-  { rank: 13, materia: "Resistência dos materiais", submateria: "Carga axial", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 14, materia: "Análise estrutural", submateria: "Estruturas hiperestáticas", petrobras: 1, transpetro: 3, total: 4, percentage: 1.6 },
-  { rank: 15, materia: "Estruturas de concreto pré-moldado", submateria: "Conceitos básicos", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 16, materia: "Mecânica dos solos", submateria: "Prospecção e amostragem", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 17, materia: "Mecânica dos solos", submateria: "Tensões nos solos", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 18, materia: "Hidráulica", submateria: "Hidrostática", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 19, materia: "Hidráulica", submateria: "Hidrodinâmica", petrobras: 3, transpetro: 1, total: 4, percentage: 1.6 },
-  { rank: 20, materia: "Hidráulica", submateria: "Orifícios", petrobras: 1, transpetro: 3, total: 4, percentage: 1.6 },
-  { rank: 21, materia: "Estradas", submateria: "Conceitos básicos e anteprojeto", petrobras: 3, transpetro: 1, total: 4, percentage: 1.6 },
-  { rank: 22, materia: "Tecnologia do concreto", submateria: "Cimento", petrobras: 3, transpetro: 1, total: 4, percentage: 1.6 },
-  { rank: 23, materia: "Tecnologia do concreto", submateria: "Dosagem", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 24, materia: "Materiais de construção", submateria: "Materiais metálicos", petrobras: 3, transpetro: 1, total: 4, percentage: 1.6 },
-  { rank: 25, materia: "Orçamentos de obras", submateria: "Fundamentos e Custos", petrobras: 3, transpetro: 1, total: 4, percentage: 1.6 },
-  { rank: 26, materia: "Qualidade na construção civil", submateria: "Qualidade na construção civil", petrobras: 3, transpetro: 1, total: 4, percentage: 1.6 },
-  { rank: 27, materia: "Hidrologia", submateria: "Previsão e controle de enchentes", petrobras: 1, transpetro: 3, total: 4, percentage: 1.6 },
-  { rank: 28, materia: "Saneamento básico", submateria: "Esgoto", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 29, materia: "Sistemas prediais", submateria: "Esgoto", petrobras: 2, transpetro: 2, total: 4, percentage: 1.6 },
-  { rank: 30, materia: "Técnicas de construção", submateria: "Esquadrias", petrobras: 1, transpetro: 3, total: 4, percentage: 1.6 },
-  { rank: 31, materia: "Resistência dos materiais", submateria: "Deflexão em vigas", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 32, materia: "Estruturas de concreto armado", submateria: "Durabilidade", petrobras: 0, transpetro: 3, total: 3, percentage: 1.2 },
-  { rank: 33, materia: "Estruturas de concreto armado", submateria: "Noções de dimensionamento", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 34, materia: "Estruturas de concreto protendido", submateria: "Conceitos básicos e materiais", petrobras: 3, transpetro: 0, total: 3, percentage: 1.2 },
-  { rank: 35, materia: "Mecânica dos solos", submateria: "Classificação dos solos", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 36, materia: "Mecânica dos solos", submateria: "Compactação dos solos", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 37, materia: "Mecânica dos solos", submateria: "Compressibilidade e adensamento", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 38, materia: "Fundações", submateria: "Fundações rasas", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 39, materia: "Fundações", submateria: "Fundações profundas", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 40, materia: "Topografia", submateria: "Conceitos básicos", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 41, materia: "Topografia", submateria: "Tipos de levantamento topográficos", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 42, materia: "Estradas", submateria: "Projeto geométrico rodoviário", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 43, materia: "Terraplanagem", submateria: "Terraplanagem", petrobras: 3, transpetro: 0, total: 3, percentage: 1.2 },
-  { rank: 44, materia: "Hidráulica", submateria: "Escoamento em tubulações sob pressão", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 45, materia: "Hidrologia", submateria: "Escoamento superficial", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 46, materia: "Hidrologia", submateria: "Regularização de vazões", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 47, materia: "Sistemas prediais", submateria: "Água fria", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 48, materia: "Sistemas prediais", submateria: "Água quente", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 49, materia: "Sistemas prediais", submateria: "Elétrica", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 50, materia: "Saneamento básico", submateria: "Água", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 51, materia: "Técnicas de construção", submateria: "Estudos e serviços preliminares", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 52, materia: "Técnicas de construção", submateria: "Fundações e infraestrutura", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 53, materia: "Técnicas de construção", submateria: "Revestimentos", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 54, materia: "Materiais de construção", submateria: "Aglomerantes", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 55, materia: "Materiais de construção", submateria: "Madeira", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 56, materia: "Materiais de construção", submateria: "Tintas", petrobras: 2, transpetro: 1, total: 3, percentage: 1.2 },
-  { rank: 57, materia: "Orçamentos de obras", submateria: "Tabela de Custos e Composições", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 58, materia: "Orçamentos de obras", submateria: "Bonificações e Despesas Indiretas", petrobras: 1, transpetro: 2, total: 3, percentage: 1.2 },
-  { rank: 59, materia: "Contratação e fiscalização de obras e serviços", submateria: "Contratação e fiscalização de obras e serviços", petrobras: 0, transpetro: 3, total: 3, percentage: 1.2 },
-  { rank: 60, materia: "Licenciamento ambiental", submateria: "Licenciamento ambiental", petrobras: 0, transpetro: 3, total: 3, percentage: 1.2 }
+  // Top 10 matérias mais importantes com dados de todos os concursos
+  { rank: 1, materia: "Análise estrutural", submateria: "Estruturas isostáticas", petrobras: 3, transpetro: 4, cfrm: 2, eaoear: 3, cpcem: 3, total: 15, percentage: 4.7 },
+  { rank: 2, materia: "Planejamento e controle de obras", submateria: "Ferramentas para o planejamento e controle de obras", petrobras: 6, transpetro: 2, cfrm: 3, eaoear: 3, cpcem: 0, total: 14, percentage: 4.4 },
+  { rank: 3, materia: "Resistência dos materiais", submateria: "Carga axial", petrobras: 3, transpetro: 1, cfrm: 0, eaoear: 7, cpcem: 1, total: 13, percentage: 4.0 },
+  { rank: 4, materia: "Resistência dos materiais", submateria: "Flexão", petrobras: 3, transpetro: 4, cfrm: 1, eaoear: 0, cpcem: 2, total: 13, percentage: 4.0 },
+  { rank: 5, materia: "Análise estrutural", submateria: "Estruturas hiperestáticas", petrobras: 4, transpetro: 1, cfrm: 1, eaoear: 0, cpcem: 2, total: 8, percentage: 2.5 },
+  { rank: 6, materia: "Fundações", submateria: "Fundações profundas", petrobras: 2, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 3, total: 8, percentage: 2.5 },
+  { rank: 7, materia: "Mecânica dos solos", submateria: "Conceitos básicos", petrobras: 3, transpetro: 1, cfrm: 0, eaoear: 1, cpcem: 1, total: 8, percentage: 2.5 },
+  { rank: 8, materia: "Mecânica dos solos", submateria: "Água nos solos", petrobras: 5, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 1, total: 8, percentage: 2.5 },
+  { rank: 9, materia: "Obras de terra", submateria: "Estabilidade de taludes", petrobras: 5, transpetro: 1, cfrm: 1, eaoear: 0, cpcem: 0, total: 8, percentage: 2.5 },
+  { rank: 10, materia: "Saneamento básico", submateria: "Esgoto", petrobras: 5, transpetro: 0, cfrm: 0, eaoear: 2, cpcem: 1, total: 8, percentage: 2.5 },
+  { rank: 11, materia: "Estruturas de concreto armado", submateria: "Conceitos básicos", petrobras: 5, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 7, percentage: 2.2 },
+  { rank: 12, materia: "Estruturas de concreto armado", submateria: "Dimensionamento detalhado", petrobras: 0, transpetro: 0, cfrm: 0, eaoear: 5, cpcem: 2, total: 7, percentage: 2.2 },
+  { rank: 13, materia: "Estruturas metálicas", submateria: "Conceitos básicos e noções de dimensionamento", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 2, cpcem: 1, total: 7, percentage: 2.2 },
+  { rank: 14, materia: "Hidráulica", submateria: "Hidrodinâmica", petrobras: 3, transpetro: 1, cfrm: 0, eaoear: 0, cpcem: 3, total: 7, percentage: 2.2 },
+  { rank: 15, materia: "Mecânica dos solos", submateria: "Tensões nos solos", petrobras: 2, transpetro: 2, cfrm: 1, eaoear: 1, cpcem: 0, total: 7, percentage: 2.2 },
+  { rank: 16, materia: "Obras de arte", submateria: "Obras de arte", petrobras: 2, transpetro: 0, cfrm: 0, eaoear: 5, cpcem: 0, total: 7, percentage: 2.2 },
+  { rank: 17, materia: "Conforto nas edificações", submateria: "Conforto nas edificações", petrobras: 7, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 7, percentage: 2.2 },
+  { rank: 18, materia: "Terraplanagem", submateria: "Terraplanagem", petrobras: 6, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 7, percentage: 2.2 },
+  { rank: 19, materia: "Análise estrutural", submateria: "Conceitos fundamentais", petrobras: 6, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 6, percentage: 1.9 },
+  { rank: 20, materia: "Estruturas de concreto armado", submateria: "Noções de dimensionamento", petrobras: 1, transpetro: 0, cfrm: 1, eaoear: 0, cpcem: 1, total: 6, percentage: 1.9 },
+  { rank: 21, materia: "Mecânica dos solos", submateria: "Compactação dos solos", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 2, cpcem: 0, total: 6, percentage: 1.9 },
+  { rank: 22, materia: "Fundações", submateria: "Fundações rasas", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 6, percentage: 1.9 },
+  { rank: 23, materia: "Transportes", submateria: "Dutovias", petrobras: 6, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 6, percentage: 1.9 },
+  { rank: 24, materia: "Segurança, inspeção e manutenção de edificações", submateria: "Segurança, inspeção e manutenção de edificações", petrobras: 6, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 6, percentage: 1.9 },
+  { rank: 25, materia: "Resistência dos materiais", submateria: "Cisalhamento", petrobras: 2, transpetro: 3, cfrm: 0, eaoear: 1, cpcem: 0, total: 6, percentage: 1.9 },
+  { rank: 26, materia: "Mecânica dos solos", submateria: "Classificação dos solos", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 27, materia: "Mecânica dos solos", submateria: "Prospecção e amostragem", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 28, materia: "Resistência dos materiais", submateria: "Deflexão em vigas", petrobras: 2, transpetro: 0, cfrm: 1, eaoear: 2, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 29, materia: "Mecânica dos solos", submateria: "Compressibilidade e adensamento", petrobras: 3, transpetro: 0, cfrm: 1, eaoear: 0, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 30, materia: "Mecânica dos solos", submateria: "Resistência ao cisalhamento", petrobras: 1, transpetro: 0, cfrm: 1, eaoear: 0, cpcem: 3, total: 5, percentage: 1.6 },
+  { rank: 31, materia: "Obras de contenção", submateria: "Empuxos de terra", petrobras: 2, transpetro: 0, cfrm: 1, eaoear: 1, cpcem: 1, total: 5, percentage: 1.6 },
+  { rank: 32, materia: "Hidráulica", submateria: "Hidrostática", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 33, materia: "Hidráulica", submateria: "Escoamento em tubulações sob pressão", petrobras: 3, transpetro: 0, cfrm: 1, eaoear: 0, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 34, materia: "Sistemas prediais", submateria: "Água fria", petrobras: 2, transpetro: 0, cfrm: 0, eaoear: 5, cpcem: 0, total: 8, percentage: 2.5 },
+  { rank: 35, materia: "Sistemas prediais", submateria: "Esgoto", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 3, cpcem: 0, total: 7, percentage: 2.2 },
+  { rank: 36, materia: "Sistemas prediais", submateria: "Elétrica", petrobras: 2, transpetro: 0, cfrm: 0, eaoear: 3, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 37, materia: "Tecnologia do concreto", submateria: "Dosagem", petrobras: 2, transpetro: 0, cfrm: 0, eaoear: 2, cpcem: 0, total: 5, percentage: 1.6 },
+  { rank: 38, materia: "Sistemas prediais", submateria: "Água quente", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 39, materia: "Estruturas de concreto armado", submateria: "Durabilidade", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 40, materia: "Estruturas de concreto protendido", submateria: "Conceitos básicos e materiais", petrobras: 2, transpetro: 0, cfrm: 0, eaoear: 2, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 41, materia: "Estruturas metálicas", submateria: "Ligações metálicas", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 42, materia: "Tecnologia do concreto", submateria: "Cimento", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 43, materia: "Materiais de construção", submateria: "Aglomerantes", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 44, materia: "Materiais de construção", submateria: "Madeira", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 45, materia: "Técnicas de construção", submateria: "Superestrutura", petrobras: 1, transpetro: 0, cfrm: 0, eaoear: 3, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 46, materia: "Técnicas de construção", submateria: "Esquadrias", petrobras: 4, transpetro: 0, cfrm: 0, eaoear: 0, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 47, materia: "Técnicas de construção", submateria: "Revestimentos", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 48, materia: "Orçamentos de obras", submateria: "Fundamentos e Custos", petrobras: 3, transpetro: 0, cfrm: 0, eaoear: 1, cpcem: 1, total: 7, percentage: 2.2 },
+  { rank: 49, materia: "Orçamentos de obras", submateria: "Formação de Preço", petrobras: 3, transpetro: 0, cfrm: 1, eaoear: 0, cpcem: 0, total: 4, percentage: 1.3 },
+  { rank: 50, materia: "Contratação e fiscalização de obras e serviços", submateria: "Contratação e fiscalização de obras e serviços", petrobras: 3, transpetro: 0, cfrm: 1, eaoear: 0, cpcem: 0, total: 4, percentage: 1.3 }
 ];
 
 const getRankIcon = (rank: number) => {
@@ -95,6 +85,9 @@ export const QuestionAnalysis = () => {
   const exams = [
     { id: "petrobras", name: "PETROBRAS", color: "text-petrobras", bgColor: "bg-petrobras/10", borderColor: "border-petrobras/30", icon: Building2 },
     { id: "transpetro", name: "TRANSPETRO", color: "text-transpetro", bgColor: "bg-transpetro/10", borderColor: "border-transpetro/30", icon: Factory },
+    { id: "cfrm", name: "CFrM", color: "text-cyan-600", bgColor: "bg-cyan-50", borderColor: "border-cyan-300", icon: Ship },
+    { id: "eaoear", name: "EAOEAR", color: "text-blue-600", bgColor: "bg-blue-50", borderColor: "border-blue-300", icon: Plane },
+    { id: "cpcem", name: "CP-CEM", color: "text-red-600", bgColor: "bg-red-50", borderColor: "border-red-300", icon: Anchor },
   ];
 
   // Extrair matérias únicas
@@ -159,8 +152,17 @@ export const QuestionAnalysis = () => {
     return matchesSearch && matchesSubject && matchesExams;
   });
 
-  const totalQuestions = subjectRankingData.reduce((acc, item) => acc + item.total, 0);
-  const top10Total = subjectRankingData.slice(0, 10).reduce((acc, item) => acc + item.total, 0);
+  // Calcular total de questões considerando todos os concursos
+  const totalQuestions = subjectRankingData.reduce((acc, item) => {
+    const total = (item.petrobras || 0) + (item.transpetro || 0) + (item.cfrm || 0) + (item.eaoear || 0) + (item.cpcem || 0);
+    return acc + total;
+  }, 0);
+  
+  const top10Total = subjectRankingData.slice(0, 10).reduce((acc, item) => {
+    const total = (item.petrobras || 0) + (item.transpetro || 0) + (item.cfrm || 0) + (item.eaoear || 0) + (item.cpcem || 0);
+    return acc + total;
+  }, 0);
+  
   const top10Percentage = ((top10Total / totalQuestions) * 100).toFixed(1);
 
   return (
@@ -170,12 +172,15 @@ export const QuestionAnalysis = () => {
           Ranking das Submatérias - Engenharia Civil
         </h2>
         <p className="text-muted-foreground mb-2">
-          Baseado na análise de <strong>320</strong> questões dos últimos concursos de Engenharia Civil
+          Baseado na análise de <strong>320+</strong> questões dos últimos concursos de Engenharia Civil
         </p>
-        <div className="text-xs text-muted-foreground space-y-1 mt-4 max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-left">
+        <div className="text-xs text-muted-foreground space-y-1 mt-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 text-left">
             <div className="flex items-center gap-1"><Building2 className="h-4 w-4 text-petrobras" /><strong>PETROBRAS:</strong> 2021, 2014, 2012</div>
             <div className="flex items-center gap-1"><Factory className="h-4 w-4 text-transpetro" /><strong>TRANSPETRO:</strong> 2023, 2018, 2012</div>
+            <div className="flex items-center gap-1"><Ship className="h-4 w-4 text-cyan-600" /><strong>CFrM:</strong> 2023-2024, 2022-2023, 2021-2022</div>
+            <div className="flex items-center gap-1"><Plane className="h-4 w-4 text-blue-600" /><strong>EAOEAR:</strong> 2018, 2016, 2015</div>
+            <div className="flex items-center gap-1"><Anchor className="h-4 w-4 text-red-600" /><strong>CP-CEM:</strong> 2024, 2023, 2022</div>
           </div>
         </div>
       </div>
