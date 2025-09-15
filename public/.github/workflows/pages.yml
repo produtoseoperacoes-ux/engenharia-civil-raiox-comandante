@@ -1,0 +1,83 @@
+name: Deploy to GitHub Pages (root build)
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Compute BASE_PATH
+        run: |
+          if [[ "${{ github.event.repository.name }}" == *".github.io" ]]; then
+            echo "BASE_PATH=/" >> $GITHUB_ENV
+          else
+            echo "BASE_PATH=/${{ github.event.repository.name }}/" >> $GITHUB_ENV
+          fi
+
+      - name: Build (usa seu script de build existente)
+        run: npm run build
+        env:
+          BASE_PATH: ${{ env.BASE_PATH }}
+
+      - name: Detect output dir
+        id: outdir
+        run: |
+          if [ -d "dist" ]; then echo "OUT=dist" >> $GITHUB_OUTPUT
+          elif [ -d "build" ]; then echo "OUT=build" >> $GITHUB_OUTPUT
+          elif [ -d "out" ]; then echo "OUT=out" >> $GITHUB_OUTPUT
+          elif [ -d "public" ]; then echo "OUT=public" >> $GITHUB_OUTPUT
+          else echo "ERRO: não encontrei pasta de build (dist/build/out/public)"; exit 1; fi
+
+      - name: Injeta <base href> se faltar
+        run: |
+          INDEX="${{ steps.outdir.outputs.OUT }}/index.html"
+          if [ ! -f "$INDEX" ]; then echo "ERRO: $INDEX não existe"; exit 1; fi
+          if ! grep -qi "<base " "$INDEX"; then
+            sed -i 's|<head>|<head><base href="'"$BASE_PATH"'">|' "$INDEX"
+          fi
+
+      - name: SPA fallback (404.html)
+        run: cp "${{ steps.outdir.outputs.OUT }}/index.html" "${{ steps.outdir.outputs.OUT }}/404.html"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.outdir.outputs.OUT }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
