@@ -85,7 +85,7 @@ export const QuestionAnalysis = () => {
   const exams = [
     { id: "petrobras", name: "PETROBRAS", color: "text-petrobras", bgColor: "bg-petrobras/10", borderColor: "border-petrobras/30", icon: Building2 },
     { id: "transpetro", name: "TRANSPETRO", color: "text-transpetro", bgColor: "bg-transpetro/10", borderColor: "border-transpetro/30", icon: Factory },
-    { id: "cfrm", name: "CFrM", color: "text-cyan-600", bgColor: "bg-cyan-50", borderColor: "border-cyan-300", icon: Ship },
+    { id: "cfrm", name: "CFRM", color: "text-cyan-600", bgColor: "bg-cyan-50", borderColor: "border-cyan-300", icon: Ship },
     { id: "eaoear", name: "EAOEAR", color: "text-blue-600", bgColor: "bg-blue-50", borderColor: "border-blue-300", icon: Plane },
     { id: "cpcem", name: "CP-CEM", color: "text-red-600", bgColor: "bg-red-50", borderColor: "border-red-300", icon: Anchor },
   ];
@@ -178,7 +178,7 @@ export const QuestionAnalysis = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 text-left">
             <div className="flex items-center gap-1"><Building2 className="h-4 w-4 text-petrobras" /><strong>PETROBRAS:</strong> 2021, 2014, 2012</div>
             <div className="flex items-center gap-1"><Factory className="h-4 w-4 text-transpetro" /><strong>TRANSPETRO:</strong> 2023, 2018, 2012</div>
-            <div className="flex items-center gap-1"><Ship className="h-4 w-4 text-cyan-600" /><strong>CFrM:</strong> 2023-2024, 2022-2023, 2021-2022</div>
+            <div className="flex items-center gap-1"><Ship className="h-4 w-4 text-cyan-600" /><strong>CFRM:</strong> 2023-2024, 2022-2023, 2021-2022</div>
             <div className="flex items-center gap-1"><Plane className="h-4 w-4 text-blue-600" /><strong>EAOEAR:</strong> 2018, 2016, 2015</div>
             <div className="flex items-center gap-1"><Anchor className="h-4 w-4 text-red-600" /><strong>CP-CEM:</strong> 2024, 2023, 2022</div>
           </div>
