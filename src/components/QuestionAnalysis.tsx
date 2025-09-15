@@ -172,7 +172,7 @@ export const QuestionAnalysis = () => {
           Ranking das Submatérias - Engenharia Civil
         </h2>
         <p className="text-muted-foreground mb-2">
-          Baseado na análise de <strong>320+</strong> questões dos últimos concursos de Engenharia Civil
+          Baseado na análise de <strong>470</strong> questões dos últimos concursos de Engenharia Civil
         </p>
         <div className="text-xs text-muted-foreground space-y-1 mt-4 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 text-left">
