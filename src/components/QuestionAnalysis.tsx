@@ -9,7 +9,7 @@ import { Search, Trophy, Medal, Award, Filter, X, Building2, Factory, Plane, Shi
 // Dados das submatérias baseados no CSV atualizado fornecido pelo usuário
 const subjectRankingData = [
   // Top 10 matérias mais importantes com dados de todos os concursos
-  { rank: 1, materia: "Análise estrutural", submateria: "Estruturas isostáticas", petrobras: 3, transpetro: 4, cfrm: 2, eaoear: 3, cpcem: 3, total: 15, percentage: 4.7 },
+  { rank: 1, materia: "aaaaa", submateria: "Estruturas isostáticas", petrobras: 3, transpetro: 4, cfrm: 2, eaoear: 3, cpcem: 3, total: 15, percentage: 4.7 },
   { rank: 2, materia: "Planejamento e controle de obras", submateria: "Ferramentas para o planejamento e controle de obras", petrobras: 6, transpetro: 2, cfrm: 3, eaoear: 3, cpcem: 0, total: 14, percentage: 4.4 },
   { rank: 3, materia: "Resistência dos materiais", submateria: "Carga axial", petrobras: 3, transpetro: 1, cfrm: 0, eaoear: 7, cpcem: 1, total: 13, percentage: 4.0 },
   { rank: 4, materia: "Resistência dos materiais", submateria: "Flexão", petrobras: 3, transpetro: 4, cfrm: 1, eaoear: 0, cpcem: 2, total: 13, percentage: 4.0 },
