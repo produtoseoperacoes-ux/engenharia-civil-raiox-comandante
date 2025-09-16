@@ -23,7 +23,7 @@ export const StudyHeader = ({ activeTab, onTabChange }: StudyHeaderProps) => {
               Concursos de Engenharia Civil
             </h1>
             <p className="text-white/80 text-lg">
-             Sua plataforma completa de preparação para concursos públicos
+              Sua plataforma completa de preparação para concursos públicos
             </p>
           </div>
           
