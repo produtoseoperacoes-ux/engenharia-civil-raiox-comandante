@@ -25,67 +25,134 @@ import {
 // Dados dos concursos baseados no CSV fornecido
 const concursosData = {
   petrobras: {
-    name: "Petrobras",
+    name: "PETROBRAS",
     icon: Factory,
     color: "text-green-600",
     bgColor: "bg-green-50",
     materias: [
-      { nome: "Resistência dos materiais", peso: 7.4, questoes: 6 },
-      { nome: "Análise estrutural", peso: 6.2, questoes: 5 },
-      { nome: "Estruturas de concreto armado", peso: 6.2, questoes: 5 },
-      { nome: "Mecânica dos solos", peso: 6.2, questoes: 5 },
-      { nome: "Obras de terra", peso: 4.9, questoes: 4 },
-      { nome: "Estruturas metálicas", peso: 4.9, questoes: 4 },
-      { nome: "Fundações", peso: 4.9, questoes: 4 },
-      { nome: "Topografia", peso: 3.7, questoes: 3 },
-      { nome: "Estradas", peso: 3.7, questoes: 3 },
-      { nome: "Terraplanagem", peso: 3.7, questoes: 3 },
-      { nome: "Hidráulica", peso: 3.7, questoes: 3 },
-      { nome: "Sistemas prediais", peso: 3.7, questoes: 3 },
-      { nome: "Saneamento básico", peso: 3.7, questoes: 3 },
-      { nome: "Planejamento e controle de obras", peso: 3.7, questoes: 3 },
-      { nome: "Orçamentos de obras", peso: 3.7, questoes: 3 },
-      { nome: "Qualidade na construção civil", peso: 1.2, questoes: 1 },
-      { nome: "Segurança, inspeção e manutenção de edificações", peso: 3.7, questoes: 3 },
-      { nome: "Conforto nas edificações", peso: 1.2, questoes: 1 },
-      { nome: "Desempenho das edificações", peso: 1.2, questoes: 1 },
-      { nome: "Transportes", peso: 2.5, questoes: 2 }
+      { nome: "Resistência dos materiais", questoes: 6 },
+      { nome: "Análise estrutural", questoes: 3 },
+      { nome: "Estruturas metálicas", questoes: 2 },
+      { nome: "Estruturas de concreto armado", questoes: 3 },
+      { nome: "Estruturas de concreto protendido", questoes: 2 },
+      { nome: "Estruturas de concreto pré-moldado", questoes: 3 },
+      { nome: "Mecânica dos solos", questoes: 6 },
+      { nome: "Obras de terra", questoes: 3 },
+      { nome: "Fundações", questoes: 2 },
+      { nome: "Topografia", questoes: 2 },
+      { nome: "Estradas", questoes: 2 },
+      { nome: "Terraplanagem", questoes: 3 },
+      { nome: "Pavimentação", questoes: 2 },
+      { nome: "Obras de arte", questoes: 2 },
+      { nome: "Tecnologia do concreto", questoes: 4 },
+      { nome: "Materiais de construção", questoes: 5 },
+      { nome: "Técnicas de construção", questoes: 5 },
+      { nome: "Hidráulica", questoes: 6 },
+      { nome: "Hidrologia", questoes: 3 },
+      { nome: "Sistemas prediais", questoes: 4 },
+      { nome: "Saneamento básico", questoes: 4 },
+      { nome: "Planejamento e controle de obras", questoes: 6 },
+      { nome: "Orçamentos de obras", questoes: 3 },
+      { nome: "Qualidade na construção civil", questoes: 3 },
+      { nome: "Segurança, inspeção e manutenção de edificações", questoes: 6 },
+      { nome: "Conforto nas edificações", questoes: 1 },
+      { nome: "Desempenho das edificações", questoes: 1 },
+      { nome: "Transportes", questoes: 2 }
     ]
   },
   transpetro: {
-    name: "Transpetro",
+    name: "TRANSPETRO",
     icon: Building2,
     color: "text-blue-600",
     bgColor: "bg-blue-50",
     materias: [
-      { nome: "Resistência dos materiais", peso: 11.8, questoes: 10 },
-      { nome: "Análise estrutural", peso: 9.4, questoes: 8 },
-      { nome: "Estruturas de concreto armado", peso: 5.9, questoes: 5 },
-      { nome: "Estruturas de madeira", peso: 2.4, questoes: 2 },
-      { nome: "Estruturas metálicas", peso: 1.2, questoes: 1 },
-      { nome: "Estruturas de concreto pré-moldado", peso: 1.2, questoes: 1 },
-      { nome: "Geologia e Geotécnica", peso: 2.4, questoes: 2 },
-      { nome: "Mecânica dos solos", peso: 4.7, questoes: 4 },
-      { nome: "Obras de terra", peso: 3.5, questoes: 3 },
-      { nome: "Obras de contenção", peso: 2.4, questoes: 2 },
-      { nome: "Fundações", peso: 0.0, questoes: 0 },
-      { nome: "Topografia", peso: 2.4, questoes: 2 },
-      { nome: "Terraplanagem", peso: 3.5, questoes: 3 },
-      { nome: "Pavimentação", peso: 2.4, questoes: 2 },
-      { nome: "Tecnologia do concreto", peso: 3.5, questoes: 3 },
-      { nome: "Materiais de construção", peso: 4.7, questoes: 4 },
-      { nome: "Técnicas de construção", peso: 5.9, questoes: 5 },
-      { nome: "Hidráulica", peso: 3.5, questoes: 3 },
-      { nome: "Hidrologia", peso: 4.7, questoes: 4 },
-      { nome: "Sistemas prediais", peso: 2.4, questoes: 2 },
-      { nome: "Saneamento básico", peso: 2.4, questoes: 2 },
-      { nome: "Planejamento e controle de obras", peso: 3.5, questoes: 3 },
-      { nome: "Orçamentos de obras", peso: 4.7, questoes: 4 },
-      { nome: "Segurança, inspeção e manutenção de edificações", peso: 3.5, questoes: 3 },
-      { nome: "Conforto nas edificações", peso: 7.1, questoes: 6 },
-      { nome: "Contratação e fiscalização de obras e serviços", peso: 3.5, questoes: 3 },
-      { nome: "Licenciamento ambiental", peso: 3.5, questoes: 3 },
-      { nome: "Transportes", peso: 3.5, questoes: 3 }
+      { nome: "Resistência dos materiais", questoes: 11 },
+      { nome: "Análise estrutural", questoes: 6 },
+      { nome: "Estruturas de madeira", questoes: 2 },
+      { nome: "Estruturas metálicas", questoes: 1 },
+      { nome: "Estruturas de concreto armado", questoes: 4 },
+      { nome: "Geologia e Geotécnica", questoes: 3 },
+      { nome: "Mecânica dos solos", questoes: 8 },
+      { nome: "Obras de terra", questoes: 5 },
+      { nome: "Obras de contenção", questoes: 4 },
+      { nome: "Topografia", questoes: 4 },
+      { nome: "Terraplanagem", questoes: 6 },
+      { nome: "Tecnologia do concreto", questoes: 3 },
+      { nome: "Materiais de construção", questoes: 6 },
+      { nome: "Técnicas de construção", questoes: 7 },
+      { nome: "Hidráulica", questoes: 4 },
+      { nome: "Hidrologia", questoes: 8 },
+      { nome: "Sistemas prediais", questoes: 5 },
+      { nome: "Saneamento básico", questoes: 3 },
+      { nome: "Planejamento e controle de obras", questoes: 6 },
+      { nome: "Orçamentos de obras", questoes: 4 },
+      { nome: "Segurança, inspeção e manutenção de edificações", questoes: 6 },
+      { nome: "Conforto nas edificações", questoes: 6 },
+      { nome: "Contratação e fiscalização de obras e serviços", questoes: 4 },
+      { nome: "Licenciamento ambiental", questoes: 3 },
+      { nome: "Transportes", questoes: 6 }
+    ]
+  },
+  cfrm: {
+    name: "CFrM",
+    icon: Ship,
+    color: "text-purple-600",
+    bgColor: "bg-purple-50",
+    materias: [
+      { nome: "Análise estrutural", questoes: 3 },
+      { nome: "Estruturas de concreto armado", questoes: 1 },
+      { nome: "Mecânica dos solos", questoes: 3 },
+      { nome: "Obras de terra", questoes: 1 },
+      { nome: "Obras de contenção", questoes: 1 },
+      { nome: "Hidráulica", questoes: 3 },
+      { nome: "Hidrologia", questoes: 1 },
+      { nome: "Planejamento e controle de obras", questoes: 3 },
+      { nome: "Orçamentos de obras", questoes: 1 }
+    ]
+  },
+  eaoear: {
+    name: "EAOEAR",
+    icon: Plane,
+    color: "text-orange-600",
+    bgColor: "bg-orange-50",
+    materias: [
+      { nome: "Resistência dos materiais", questoes: 4 },
+      { nome: "Análise estrutural", questoes: 1 },
+      { nome: "Estruturas de concreto armado", questoes: 1 },
+      { nome: "Estruturas de concreto protendido", questoes: 2 },
+      { nome: "Estruturas de concreto pré-moldado", questoes: 1 },
+      { nome: "Geologia e Geotécnica", questoes: 1 },
+      { nome: "Mecânica dos solos", questoes: 3 },
+      { nome: "Obras de terra", questoes: 1 },
+      { nome: "Fundações", questoes: 1 },
+      { nome: "Obras de arte", questoes: 5 },
+      { nome: "Tecnologia do concreto", questoes: 4 },
+      { nome: "Materiais de construção", questoes: 2 },
+      { nome: "Técnicas de construção", questoes: 4 },
+      { nome: "Hidrologia", questoes: 1 },
+      { nome: "Sistemas prediais", questoes: 8 },
+      { nome: "Saneamento básico", questoes: 2 },
+      { nome: "Planejamento e controle de obras", questoes: 3 },
+      { nome: "Orçamentos de obras", questoes: 1 }
+    ]
+  },
+  cpcem: {
+    name: "CP-CEM",
+    icon: Anchor,
+    color: "text-red-600",
+    bgColor: "bg-red-50",
+    materias: [
+      { nome: "Resistência dos materiais", questoes: 1 },
+      { nome: "Análise estrutural", questoes: 3 },
+      { nome: "Estruturas de madeira", questoes: 1 },
+      { nome: "Estruturas metálicas", questoes: 1 },
+      { nome: "Estruturas de concreto armado", questoes: 1 },
+      { nome: "Mecânica dos solos", questoes: 1 },
+      { nome: "Fundações", questoes: 2 },
+      { nome: "Estradas", questoes: 2 },
+      { nome: "Hidráulica", questoes: 3 },
+      { nome: "Técnicas de construção", questoes: 1 },
+      { nome: "Planejamento e controle de obras", questoes: 1 }
     ]
   }
 };
@@ -115,10 +182,6 @@ export const GroupStudy = () => {
         )
       )
       .map(materia => {
-        const pesoTotal = selectedData.reduce((sum, concurso) => {
-          const materiaData = concurso.materias.find(m => m.nome === materia.nome);
-          return sum + (materiaData?.peso || 0);
-        }, 0);
         const questoesTotais = selectedData.reduce((sum, concurso) => {
           const materiaData = concurso.materias.find(m => m.nome === materia.nome);
           return sum + (materiaData?.questoes || 0);
@@ -126,16 +189,14 @@ export const GroupStudy = () => {
         
         return {
           nome: materia.nome,
-          pesoMedio: Math.round(pesoTotal / selectedData.length),
           questoesTotais,
           concursos: selectedData.map(concurso => ({
             nome: concurso.name,
-            peso: concurso.materias.find(m => m.nome === materia.nome)?.peso || 0,
             questoes: concurso.materias.find(m => m.nome === materia.nome)?.questoes || 0
           }))
         };
       })
-      .sort((a, b) => b.pesoMedio - a.pesoMedio);
+      .sort((a, b) => b.questoesTotais - a.questoesTotais);
 
     // Matérias específicas de cada concurso
     const materiasEspecificas = selectedData.map(concurso => ({
@@ -221,7 +282,7 @@ export const GroupStudy = () => {
               </h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="text-center p-4 bg-green-50 rounded-lg border border-green-200">
                 <CheckCircle2 className="h-8 w-8 text-green-600 mx-auto mb-2" />
                 <div className="text-2xl font-bold text-green-600">
@@ -235,10 +296,10 @@ export const GroupStudy = () => {
               <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <TrendingUp className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                 <div className="text-2xl font-bold text-blue-600">
-                  {Math.round(analise.materiasComuns.reduce((sum, m) => sum + m.pesoMedio, 0))}%
+                  {analise.materiasComuns.reduce((sum, m) => sum + m.questoesTotais, 0)}
                 </div>
                 <div className="text-sm text-blue-700">
-                  Peso Total Comum
+                  Total de Questões
                 </div>
               </div>
               
@@ -278,7 +339,7 @@ export const GroupStudy = () => {
                         {materia.nome}
                       </h3>
                       <Badge className="bg-green-100 text-green-700">
-                        {materia.pesoMedio}% peso médio
+                        {materia.questoesTotais} questões
                       </Badge>
                     </div>
                     <div className="text-sm text-green-600 font-medium">
@@ -293,7 +354,7 @@ export const GroupStudy = () => {
                           {concurso.nome}
                         </div>
                         <div className="font-semibold text-green-700">
-                          {concurso.peso}% ({concurso.questoes}q)
+                          {concurso.questoes} questões
                         </div>
                       </div>
                     ))}
@@ -335,7 +396,7 @@ export const GroupStudy = () => {
                               {materia.nome}
                             </span>
                             <Badge className="text-xs">
-                              {materia.peso}% ({materia.questoes}q)
+                              {materia.questoes} questões
                             </Badge>
                           </div>
                         ))
