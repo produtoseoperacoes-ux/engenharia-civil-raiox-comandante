@@ -60,7 +60,7 @@ const examData: ExamData[] = [
       { text: "Graduação em Engenharia Civil", status: "met" },
       { text: "Altura: mín. 1,55m (♀) / 1,60m (♂)", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
-      { text: "Teste de aptidão física (TAF) - etapa", status: "warning" }
+      { text: "Teste de aptidão física (TAF) - etapa", status: "health" }
     ]
   },
   {
@@ -73,7 +73,7 @@ const examData: ExamData[] = [
       { text: "Graduação em Engenharia Civil", status: "met" },
       { text: "Altura: mín. 1,55m (♀) / 1,60m (♂)", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
-      { text: "Formação militar após aprovação", status: "warning" }
+      { text: "Formação militar após aprovação", status: "health" }
     ]
   }
 ];
