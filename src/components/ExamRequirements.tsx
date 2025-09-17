@@ -87,7 +87,7 @@ const getStatusIcon = (status: Requirement['status']) => {
     case 'info':
       return <Info className="h-4 w-4 text-petrobras" />;
     case 'health':
-      return <AlertCircle className="h-4 w-4 text-purple-500" />;
+      return <AlertCircle className="h-4 w-4 text-blue-500" />;
   }
 };
 
