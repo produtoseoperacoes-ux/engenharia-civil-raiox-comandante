@@ -39,12 +39,12 @@ const examData: ExamData[] = [
   },
   {
     title: "CP-CEM",
-    subtitle: "Marinha",
+    subtitle: "(Marinha)",
     color: "military",
     requirements: [
       { text: "Brasileiro(a) nato", status: "warning" },
       { text: "Máximo 35 anos (na data da incorporação)", status: "warning" },
-      { text: "Graduação em Engenharia Mecânica", status: "warning" },
+      { text: "Graduação em Engenharia Civil", status: "warning" },
       { text: "Altura: 1,54m a 2,00m", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
       { text: "Aprovação em inspeção de saúde", status: "warning" }
@@ -52,12 +52,12 @@ const examData: ExamData[] = [
   },
   {
     title: "EAOEAR",
-    subtitle: "Aeronáutica",
+    subtitle: "(Aeronáutica)",
     color: "military",
     requirements: [
       { text: "Brasileiro(a) nato", status: "warning" },
       { text: "Máximo 35 anos (no ano da incorporação)", status: "warning" },
-      { text: "Graduação em Engenharia Mecânica", status: "warning" },
+      { text: "Graduação em Engenharia Civil", status: "warning" },
       { text: "Altura: mín. 1,55m (♀) / 1,60m (♂)", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
       { text: "Teste de aptidão física (TAF) - etapa", status: "warning" }
@@ -65,12 +65,12 @@ const examData: ExamData[] = [
   },
   {
     title: "CFRM",
-    subtitle: "Exército",
+    subtitle: "(Exército)",
     color: "military",
     requirements: [
       { text: "Brasileiro(a) ambos os sexos", status: "warning" },
       { text: "Máximo 26 anos (no ano da incorporação)", status: "warning" },
-      { text: "Graduação em Engenharia Mecânica", status: "warning" },
+      { text: "Graduação em Engenharia Civil", status: "warning" },
       { text: "Altura: mín. 1,55m (♀) / 1,60m (♂)", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
       { text: "Formação militar após aprovação", status: "warning" }
