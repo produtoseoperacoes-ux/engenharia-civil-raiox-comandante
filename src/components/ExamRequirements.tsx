@@ -38,7 +38,8 @@ const examData: ExamData[] = [
     ]
   },
   {
-    title: "CP-CEM (Marinha)",
+    title: "CP-CEM",
+    subtitle: "Marinha",
     color: "military",
     requirements: [
       { text: "Brasileiro(a) nato", status: "warning" },
@@ -50,7 +51,8 @@ const examData: ExamData[] = [
     ]
   },
   {
-    title: "EAOEAR (Aeronáutica)",
+    title: "EAOEAR",
+    subtitle: "Aeronáutica",
     color: "military",
     requirements: [
       { text: "Brasileiro(a) nato", status: "warning" },
@@ -62,7 +64,8 @@ const examData: ExamData[] = [
     ]
   },
   {
-    title: "CFRM (Exército)",
+    title: "CFRM",
+    subtitle: "Exército",
     color: "military",
     requirements: [
       { text: "Brasileiro(a) ambos os sexos", status: "warning" },
