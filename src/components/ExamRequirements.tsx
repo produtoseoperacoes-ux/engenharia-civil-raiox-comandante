@@ -4,7 +4,7 @@ import { CheckCircle, AlertCircle, Info } from "lucide-react";
 
 interface Requirement {
   text: string;
-  status: 'met' | 'warning' | 'info';
+  status: 'met' | 'warning' | 'info' | 'health';
 }
 
 interface ExamData {
@@ -42,12 +42,12 @@ const examData: ExamData[] = [
     subtitle: "(Marinha)",
     color: "military",
     requirements: [
-      { text: "Brasileiro(a) nato", status: "warning" },
+      { text: "Brasileiro(a) nato", status: "met" },
       { text: "Máximo 35 anos (na data da incorporação)", status: "warning" },
-      { text: "Graduação em Engenharia Civil", status: "warning" },
+      { text: "Graduação em Engenharia Civil", status: "met" },
       { text: "Altura: 1,54m a 2,00m", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
-      { text: "Aprovação em inspeção de saúde", status: "warning" }
+      { text: "Aprovação em inspeção de saúde", status: "health" }
     ]
   },
   {
@@ -55,9 +55,9 @@ const examData: ExamData[] = [
     subtitle: "(Aeronáutica)",
     color: "military",
     requirements: [
-      { text: "Brasileiro(a) nato", status: "warning" },
+      { text: "Brasileiro(a) nato", status: "met" },
       { text: "Máximo 35 anos (no ano da incorporação)", status: "warning" },
-      { text: "Graduação em Engenharia Civil", status: "warning" },
+      { text: "Graduação em Engenharia Civil", status: "met" },
       { text: "Altura: mín. 1,55m (♀) / 1,60m (♂)", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
       { text: "Teste de aptidão física (TAF) - etapa", status: "warning" }
@@ -68,9 +68,9 @@ const examData: ExamData[] = [
     subtitle: "(Exército)",
     color: "military",
     requirements: [
-      { text: "Brasileiro(a) ambos os sexos", status: "warning" },
+      { text: "Brasileiro(a) ambos os sexos", status: "met" },
       { text: "Máximo 26 anos (no ano da incorporação)", status: "warning" },
-      { text: "Graduação em Engenharia Civil", status: "warning" },
+      { text: "Graduação em Engenharia Civil", status: "met" },
       { text: "Altura: mín. 1,55m (♀) / 1,60m (♂)", status: "warning" },
       { text: "Quitação eleitoral e militar", status: "met" },
       { text: "Formação militar após aprovação", status: "warning" }
@@ -86,6 +86,8 @@ const getStatusIcon = (status: Requirement['status']) => {
       return <AlertCircle className="h-4 w-4 text-warning" />;
     case 'info':
       return <Info className="h-4 w-4 text-petrobras" />;
+    case 'health':
+      return <AlertCircle className="h-4 w-4 text-purple-500" />;
   }
 };
 
